@@ -108,9 +108,9 @@ const AppProvider = ({ children }) => {
     setQuestions([]);
   };
   useEffect(() => {
-    const stop = setInterval(() => {
-      setCounter((i) => i - 1);
-    }, 1000);
+    // const stop = setInterval(() => {
+    //   setCounter((i) => i - 1);
+    // }, 1000);
     if (counter <= 0) {
       clearInterval(stop);
       setEarned(true);

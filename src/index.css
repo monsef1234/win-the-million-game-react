@@ -127,6 +127,29 @@ body {
 .container .questions_container .suggestions .sugg.wrong {
   animation: wrongAnimation 3s ease forwards;
 }
+
+.container .money_container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container .money_container ol {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.container .money_container li {
+  font-size: 1.3rem;
+  margin: 0 0rem 0.5rem 1.3rem;
+}
+.container .money_container li.active {
+  transition: 0.5s;
+  color: green;
+  transform: scale(1.1);
+}
+.container .money_container li::marker {
+  opacity: 0 !important;
+}
 @keyframes correctAnimation {
   0% {
     background-color: blue;
@@ -163,25 +186,57 @@ body {
     background-color: red;
   }
 }
-.container .money_container {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+@keyframes correctAnimation {
+  0% {
+    background-color: blue;
+  }
+  20% {
+    background-color: var(--bg);
+  }
+  40% {
+    background-color: blue;
+  }
+  60% {
+    background-color: var(--bg);
+  }
+  80%,
+  100% {
+    background-color: green;
+  }
 }
-.container .money_container ol {
-  display: flex;
-  flex-direction: column-reverse;
+@keyframes wrongAnimation {
+  0% {
+    background-color: blue;
+  }
+  20% {
+    background-color: var(--bg);
+  }
+  40% {
+    background-color: blue;
+  }
+  60% {
+    background-color: var(--bg);
+  }
+  80%,
+  100% {
+    background-color: red;
+  }
 }
-.container .money_container li {
-  font-size: 1.3rem;
-  margin: 0 0rem 0.5rem 1.3rem;
-}
-.container .money_container li.active {
-  transition: 0.5s;
-  color: green;
-  transform: scale(1.1);
-}
-.container .money_container li::marker {
-  opacity: 0 !important;
+@media screen and (max-width: 600px) {
+  .container {
+    grid-template-columns: 70% 30%;
+  }
+  .container .questions_container .countdown {
+    top: 10%;
+  }
+  .container .questions_container {
+    padding: 0rem 1rem 2rem;
+  }
+  .container .questions_container .suggestions {
+    grid-template-columns: 1fr;
+  }
+  .container .money_container li {
+    font-size: 1.3rem;
+    margin: 0 0rem 0.5rem 2rem;
+  }
 }
